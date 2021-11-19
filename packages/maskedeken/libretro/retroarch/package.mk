@@ -58,8 +58,7 @@ PKG_CONFIGURE_OPTS_TARGET="--disable-qt \
                            --enable-sdl2 \
                            --enable-ffmpeg \
 			   --disable-kms \
-			   --enable-mali_fbdev \
-			   --enable-odroidgo2"
+			   --enable-mali_fbdev"
 
 
 if [ $ARCH == "arm" ]; then
