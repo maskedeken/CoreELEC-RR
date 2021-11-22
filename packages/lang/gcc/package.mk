@@ -38,7 +38,6 @@ GCC_COMMON_CONFIGURE_OPTS="--target=${TARGET_NAME} \
                            --disable-libatomic \
                            --disable-libitm \
                            --disable-libquadmath \
-                           --disable-libgomp \
                            --disable-libmpx \
                            --disable-libssp \
                            --enable-__cxa_atexit"
@@ -49,6 +48,7 @@ PKG_CONFIGURE_OPTS_BOOTSTRAP="${GCC_COMMON_CONFIGURE_OPTS} \
                               --enable-cloog-backend=isl \
                               --disable-shared \
                               --disable-threads \
+			      --disable-libgomp \
                               --without-headers \
                               --with-newlib \
                               --disable-decimal-float \
@@ -131,6 +131,7 @@ make_target() {
 makeinstall_target() {
   mkdir -p ${INSTALL}/usr/lib
     cp -P ${PKG_BUILD}/.${HOST_NAME}/${TARGET_NAME}/libgcc/libgcc_s.so* ${INSTALL}/usr/lib
+    cp -P ${PKG_BUILD}/.${HOST_NAME}/${TARGET_NAME}/libgomp/.libs/libgomp.so* $INSTALL/usr/lib
     cp -P ${PKG_BUILD}/.${HOST_NAME}/${TARGET_NAME}/libstdc++-v3/src/.libs/libstdc++.so* ${INSTALL}/usr/lib
 }
 

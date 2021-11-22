@@ -1,0 +1,12 @@
+diff -ur a/es-app/src/guis/GuiMenu.cpp b/es-app/src/guis/GuiMenu.cpp
+--- a/es-app/src/guis/GuiMenu.cpp	2021-11-22 07:51:52.578014542 +0000
++++ b/es-app/src/guis/GuiMenu.cpp	2021-11-22 07:52:46.847249809 +0000
+@@ -785,7 +785,7 @@
+ 			window->pushGui(new GuiMsgBox(window, "START RETROARCH?", "YES",
+ 				[] {
+ 				Scripting::fireEvent("quit", "retroarch");
+-				runSystemCommand("systemd-run /storage/.kodi/addons/script.emuelec.Amlogic.launcher/bin/ee_retroarch.sh");
++				runSystemCommand("systemd-run /storage/.kodi/addons/script.emuelec.Amlogic-ng.launcher/bin/ee_retroarch.sh");
+ 				quitES();
+ 			}, "NO", nullptr));
+ 		});
